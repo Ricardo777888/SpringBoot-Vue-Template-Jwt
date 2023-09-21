@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * 用于处理邮件发送的消息队列监听器
  */
-@Component
+//@Component
 @RabbitListener(queues = "mail")
 public class MailQueueListener {
 

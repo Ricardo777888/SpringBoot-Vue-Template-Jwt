@@ -14,9 +14,9 @@ spring:
     password: admin
     virtual-host: /
   datasource:
-    url: jdbc:mysql://localhost:3306/test
+    url: jdbc:mysql://a319959fb820.c.methodot.com:31108/test
     username: root
-    password: 123456
+    password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
   security:
     jwt:
@@ -39,3 +39,16 @@ spring:
       origin: '*'
       credentials: false
       methods: '*'
+#  data:
+#    redis:
+#      host: dec67a089b92.c.methodot.com
+#      port: 31499
+#      password:
+#      lettuce:
+#        pool:
+#          # 连接池最大连接数，若为负数则表示没有任何限制
+#          max-active: 8
+#          # 连接池最大阻塞等待时间，若为负数则表示没有任何限制
+#          max-wait: -1
+#          # 连接池中的最大空闲连接
+#          max-idle: 8
