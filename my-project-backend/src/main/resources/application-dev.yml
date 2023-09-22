@@ -6,8 +6,8 @@ springdoc:
 spring:
   mail:
     host: smtp.163.com
-    username: javastudy111@163.com
-    password: VKQFYZMUSUZGSGEG
+    username: wwz788888@163.com
+    password: RUEFXDDQDRQTJBGS
   rabbitmq:
     addresses: localhost
     username: admin
@@ -41,14 +41,18 @@ spring:
       methods: '*'
 #  data:
 #    redis:
-#      host: dec67a089b92.c.methodot.com
-#      port: 31499
-#      password:
-#      lettuce:
-#        pool:
-#          # 连接池最大连接数，若为负数则表示没有任何限制
-#          max-active: 8
-#          # 连接池最大阻塞等待时间，若为负数则表示没有任何限制
-#          max-wait: -1
-#          # 连接池中的最大空闲连接
-#          max-idle: 8
+#      host:
+  data:
+    redis:
+      host: dec67a089b92.c.methodot.com
+      port: 31499
+      password:
+      jedis:
+        pool:
+          # 连接池最大连接数，若为负数则表示没有任何限制
+          max-active: 8
+          # 连接池最大阻塞等待时间，若为负数则表示没有任何限制
+          max-wait: -1
+          # 连接池中的最大空闲连接
+          max-idle: 8
+      connect-timeout: 5000

@@ -10,11 +10,13 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
+import static com.example.utils.Const.MQ_MAIL;
+
 /**
  * 用于处理邮件发送的消息队列监听器
  */
 //@Component
-@RabbitListener(queues = "mail")
+@RabbitListener(queues = MQ_MAIL)
 public class MailQueueListener {
 
     @Resource
