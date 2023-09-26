@@ -23,6 +23,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.text.MessageFormat;
 import java.util.Date;
 import java.util.Map;
 import java.util.Random;
@@ -99,10 +100,10 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
             Map<String, Object> data = Map.of("type", type, "email", email, "code", code);
             SimpleMailMessage message = switch (data.get("type").toString()) {
                 case "register" -> createMessage("欢迎注册青青草原",
-                        "您的邮件注册验证码为: " + code + "，有效时间3分钟，为了保障您的账户安全，请勿向他人泄露验证码信息。",
+                        MessageFormat.format("您的邮件注册验证码为: {0}，有效时间3分钟，为了保障您的账户安全，请勿向他人泄露验证码信息。", code),
                         email);
                 case "reset" -> createMessage("您的密码重置邮件",
-                        "你好，您正在执行重置密码操作，验证码: " + code + "，有效时间3分钟，如非本人操作，请无视。",
+                        MessageFormat.format("你好，您正在执行重置密码操作，验证码: {0}，有效时间3分钟，如非本人操作，请无视。", code),
                         email);
                 default -> null;
             };
@@ -237,7 +238,7 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
         message.setSubject(title);
         message.setText(content);
         message.setTo(email);
-        message.setFrom(username);
+        message.setFrom("羊村"+"<"+username+">");
         return message;
     }
 }
